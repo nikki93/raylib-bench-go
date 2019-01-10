@@ -51,7 +51,7 @@ func draw() {
 
 func main() {
 	rl.InitWindow(947, 781, "hello, raylib!")
-	rl.SetTargetFPS(60)
+	rl.SetTargetFPS(120)
 
 	load()
 
