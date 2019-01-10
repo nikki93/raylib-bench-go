@@ -17,10 +17,10 @@ type rect struct {
 	phase float32
 }
 
-var rects = map[int]*rect{}
+var rects = [N]*rect{}
 
 func load() {
-	for i := 1; i <= N; i++ {
+	for i := 0; i < N; i++ {
 		rects[i] = &rect{
 			x:     947 * rand.Float32(),
 			y:     781 * rand.Float32(),
@@ -34,14 +34,14 @@ func load() {
 }
 
 func update() {
-	for i := 1; i <= N; i++ {
+	for i := 0; i < N; i++ {
 		rect := rects[i]
 		rect.x += rect.speed * float32(math.Sin(float64(rl.GetTime()+rect.phase))) * rl.GetFrameTime()
 	}
 }
 
 func draw() {
-	for i := 1; i <= N; i++ {
+	for i := 0; i < N; i++ {
 		rect := rects[i]
 		rl.DrawRectangle(int32(rect.x), int32(rect.y), rect.w, rect.h, rect.color)
 	}
